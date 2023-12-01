@@ -1,0 +1,60 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<div class="container-fluid px-4">
+    <h1 class="mt-4">Nueva Categoría</h1>
+
+    <div class="card mb-4">
+        <div class="card-body">
+            <form class="row g-3" method="POST" action="/categoria/addcategoria">
+                <div class="col-6">
+                    <label class="form-label">Nombre</label>
+                    <input name="nombre" type="text" class="form-control" required>
+                </div>
+                <div class="col-6">
+                    <label class="form-label">Estado</label>
+                    <select name="estado" class="form-select" required>
+                        <option selected disabled value>Escoger...</option>
+                        <option>Activo</option>
+                        <option>Inactivo</option>
+                        <!-- Agrega más opciones según sea necesario -->
+                    </select>
+                </div>
+                <div class="col-6">
+                    <label  class="form-label">Descripción</label>
+                    <input name="descripcion" type="text" class="form-control"  required>
+                </div>
+                <div class="col-6">
+                    <label class="form-label">Imagen</label>
+                    <input name="imagen" type="text" class="form-control" required>
+                </div>
+                <div class="box-footer">
+                    <center>
+                    <a href="/categoria/"><button type="button" class="btn btn-danger">Cancelar</button></a>
+                    <input name="save" type="submit" class="btn btn-info pull-right" value="Guardar">
+                </center>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="player-one-logo">
+    <!-- Puedes ajustar el tamaño y la posición según tus necesidades -->
+    <img src="/static/img/logo.png" alt="Player ONE Logo" class="img-fluid">
+</div>
+<style>
+    .player-one-logo {
+        padding: 20px; /* Espaciado alrededor del logo */
+        margin-top: 20px; /* Ajusta el espacio entre el formulario y el logo */
+        opacity: 0.3;
+        text-align: center;
+    }
+    
+    .player-one-logo img {
+        max-width: 500%; /* La imagen es responsive y no excede el tamaño del contenedor */
+        height: auto; /* La altura se ajusta automáticamente según el ancho */
+    }
+    </style>
+
+{% endblock %}

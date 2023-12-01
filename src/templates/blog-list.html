@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contador Regresivo</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #container {
+            text-align: center;
+        }
+
+        #contador-box {
+            border: 1px solid #ccc;
+            display: inline-block;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+    <script>
+        // Función para iniciar el contador regresivo
+        function iniciarContadorRegresivo() {
+            // Establece la fecha y hora de finalización (puedes personalizar esta fecha)
+            var fechaFinalizacion = new Date("2023-12-31 23:59:59").getTime();
+
+            // Actualiza el contador cada segundo
+            var temporizador = setInterval(function() {
+                var ahora = new Date().getTime();
+                var tiempoRestante = fechaFinalizacion - ahora;
+
+                var dias = Math.floor(tiempoRestante / (1000 * 60 * 60 * 24));
+                var horas = Math.floor((tiempoRestante % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutos = Math.floor((tiempoRestante % (1000 * 60 * 60)) / (1000 * 60));
+                var segundos = Math.floor((tiempoRestante % (1000 * 60)) / 1000);
+
+                // Actualiza el elemento HTML con el tiempo restante
+                document.getElementById("contador").innerHTML = dias + "d " + horas + "h " + minutos + "m " + segundos + "s ";
+
+                // Si el contador llega a cero, detén el temporizador
+                if (tiempoRestante < 0) {
+                    clearInterval(temporizador);
+                    document.getElementById("contador").innerHTML = "¡Tiempo expirado!";
+                }
+            }, 1000); // Actualiza cada segundo
+        }
+
+        // Inicia el contador automáticamente al cargar la página
+        window.onload = iniciarContadorRegresivo;
+    </script>
+</head>
+<body>
+    <div id="container">
+        <div id="contador-box">
+            <h1>Contador Regresivo</h1>
+            <div id="contador"></div>
+        </div>
+    </div>
+</body>
+</html>

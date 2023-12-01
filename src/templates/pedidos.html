@@ -1,0 +1,114 @@
+{% extends 'layout_tienda.html' %}
+
+{% block body %}
+
+                <main>
+                    <div class="container-fluid px-4">
+                        <div class="nk-gap-1"></div>
+<div class="container">
+<ul class="nk-breadcrumbs">
+
+
+<li><a href="/">Inicio</a></li>
+
+
+<li><span class="fa fa-angle-right"></span></li>
+
+<li><a href="/control_panel">Cliente</a></li>
+
+
+<li><span class="fa fa-angle-right"></span></li>
+
+<li><span>Mis Compras</span></li>
+
+</ul>
+</div>
+<div class="container">
+<div class="nk-store nk-store-checkout">
+    <div class="nk-gap-2"></div>
+<h3 class="nk-decorated-h-2"><span><span class="text-main-1">Tabla</span> de Pedidos</span></h3>
+<div class="nk-gap-2"></div>
+                            <div class="table-responsive">
+                                <table id="datatablesSimple">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Ref./Transacción</th>
+                                            <th>Fecha</th>
+                                            <th>Monto</th>
+                                            <th>Forma de pago</th>
+                                            <th>Status</th>
+                                            <th>Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>TRX-2023-001</td>
+                                            <td class="fecha">17-08-2023</td>
+                                            <td>S/. 450.00</td>
+                                            <td>Yape</td>
+                                            <td><button type="button" class="btn btn-success font-weight-bold" disabled>Completado</button></td>
+
+                                            <td>
+                                                <a class="nk-btn nk-btn-rounded nk-btn-color-main-2" href="#">Ver Detalle</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>REF-456789</td>
+                                            <td class="fecha">17-08-2023</td>
+                                            <td>S/. 550.00</td>
+                                            <td>Tarjeta débito</td>
+                                            <td><button type="button" class="btn btn-success font-weight-bold" disabled>Completado</button></td>
+
+                                            <td>
+                                                <a class="nk-btn nk-btn-rounded nk-btn-color-main-2" href="#">Ver Detalle</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>TRX-9876</td>
+                                            <td class="fecha">18-08-2023</td>
+                                            <td>S/. 285.00</td>
+                                            <td>Tarjeta crédito</td>
+                                            <td><button type="button" class="btn btn-warning font-weight-bold" disabled>Pendiente</button></td>
+
+                                            <td>
+                                                <a class="nk-btn nk-btn-rounded nk-btn-color-main-2" href="#">Ver Detalle</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>TRX-2023-020</td>
+                                            <td class="fecha">19-08-2023</td>
+                                            <td>S/. 570.00</td>
+                                            <td>PayPal</td>
+                                            <td><button type="button" class="btn btn-dark font-weight-bold" disabled>Reembolso</button></td>
+                                            <td>
+                                                <a class="nk-btn nk-btn-rounded nk-btn-color-main-2" href="#">Ver Detalle</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>TRX-2023-057</td>
+                                            <td class="fecha">20-08-2023</td>
+                                            <td>S/. 178.00</td>
+                                            <td>Yape</td>
+                                            <td><button type="button" class="btn btn-success font-weight-bold" disabled>Completado</button></td>
+                                            <td>
+                                                <a class="nk-btn nk-btn-rounded nk-btn-color-main-2" href="#">Ver Detalle</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="nk-gap-2"></div>
+                    </div>
+                </div>
+            </div>
+                </main>
+
+
+            {% endblock %}

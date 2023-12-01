@@ -1,0 +1,133 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<div class="container-fluid px-4">
+    <h1 class="mt-4">Eliminar Usuario</h1>
+
+    <div class="card mb-4">
+        <div class="card-body">
+            <form class="row g-3" method="POST" action="/usuario/deleteusuario">
+                {% for row in data %}
+                    <div class="col-6">
+                        <label class="form-label">Nombres</label>
+                        <input name="nombre" value="{{ row[1] }}" type="text" class="form-control" disabled>
+                    </div>
+
+                    <div class="col-6">
+                        <label class="form-label">Apellidos</label>
+                        <input name="apellido" value="{{ row[2] }}" type="text" class="form-control" disabled>
+                    </div>
+                    
+                    <div class="col-6">
+                        <label class="form-label">Email</label>
+                        <input name="email" value="{{ row[3] }}" type="text" class="form-control" disabled>
+                    </div>
+
+                    <div class="col-6">
+                        <label class="form-label">Contraseña</label>
+                        <input name="password" value="{{ row[4] }}" type="text" class="form-control"
+                                placeholder="Contraseña" autocomplete="off" disabled>
+                    </div>
+
+                    <div class="col-6">
+                        <label class="form-label">Telefono</label>
+                        <input name="telefono" value="{{ row[5] }}" type="text" class="form-control" disabled>
+                    </div>
+
+                    <div class="col-6">
+                        <label for="inputState" class="form-label">Rol</label>
+                        <select name="rol" id="inputState" class="form-select" disabled>
+                            <option disabled value="">Escoger...</option>
+                            <option {% if row[6] == 'Administrador' %}selected{% endif %}>Administrador</option>
+                            <!-- Agrega más opciones según sea necesario -->
+                        </select>
+                    </div>
+
+                    <div class="col-6">
+                        <label class="form-label">Imagen</label>
+                        <input name="imagen" value="{{ row[7] }}" type="text" class="form-control" disabled>
+                    </div>
+
+                    <div class="col-6">
+                        <label class="form-label">Estado</label>
+                        <select name="estado" class="form-select" disabled>
+                            <option disabled value="">Escoger...</option>
+                            <option {% if row[8] == 'Activo' %}selected{% endif %}>Activo</option>
+                            <option {% if row[8] == 'Inactivo' %}selected{% endif %}>Inactivo</option>
+                            <!-- Agrega más opciones según sea necesario -->
+                        </select>
+                    </div>
+
+                    <div class="col-6">
+                        <label class="form-label">Dirección</label>
+                        <input name="direccion" value="{{ row[9] }}" type="text" class="form-control" placeholder="Dirección"
+                                autocomplete="off" disabled>
+                    </div>
+
+                    <div class="col-6">
+                        <label class="form-label">DNI</label>
+                        <input name="dni" value="{{ row[10] }}" type="text" class="form-control" placeholder="DNI"
+                                autocomplete="off" disabled>
+                    </div>
+
+                    <div class="col-6">
+                        <label class="form-label">Carrera</label>
+                        <input name="carrera" value="{{ row[11] }}" type="text" class="form-control" placeholder="Carrera"
+                                autocomplete="off" disabled>
+                    </div>
+
+                    <div class="col-6">
+                        <label class="form-label">Fecha de nacimiento</label>
+                        <input name="fecha" value="{{ row[12] }}" type="date" class="form-control" placeholder="Fecha"
+                                autocomplete="off" disabled>
+                    </div>
+
+                    <div class="col-6">
+                        <label class="form-label">Facebook</label>
+                        <input name="facebook_url" value="{{ row[13] }}" type="url" class="form-control" placeholder="facebook_url"
+                                autocomplete="off" disabled>
+                    </div>
+
+                    <div class="col-6">
+                        <label class="form-label">Instagram</label>
+                        <input name="instagram_url" value="{{ row[14] }}" type="url" class="form-control" placeholder="instagram_url"
+                                autocomplete="off" disabled>
+                    </div>
+
+                    <div class="col-6">
+                        <label class="form-label">Linkedin</label>
+                        <input name="linkedin_url" value="{{ row[15] }}" type="url" class="form-control" placeholder="linkedin_url"
+                                autocomplete="off" disabled>
+                    </div>
+
+                    <div class="box-footer">
+                        <a href="/usuario/"><button type="button" class="btn btn-default">Cancelar</button></a>
+                        <input name="delete" type="submit" class="btn btn-info pull-right" value="Eliminar">
+                    </div>
+                {% endfor %}
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="player-one-logo">
+    <!-- Puedes ajustar el tamaño y la posición según tus necesidades -->
+    <img src="/static/img/logo.png" alt="Player ONE Logo" class="img-fluid">
+</div>
+
+<style>
+.player-one-logo {
+    padding: 20px; /* Espaciado alrededor del logo */
+    margin-top: 20px; /* Ajusta el espacio entre el formulario y el logo */
+    opacity: 0.3;
+    text-align: center;
+}
+
+.player-one-logo img {
+    max-width: 500%; /* La imagen es responsive y no excede el tamaño del contenedor */
+    height: auto; /* La altura se ajusta automáticamente según el ancho */
+}
+</style>
+
+{% endblock %}

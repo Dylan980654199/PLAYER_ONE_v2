@@ -1,0 +1,75 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<div class="container-fluid px-4">
+    <h1 class="mt-4">Eliminar Producto</h1>
+
+    <div class="card mb-4">
+        <div class="card-body">
+            <form class="row g-3" method="POST" action="/producto/deleteproducto">
+                {% for row in data %}
+                <div class="col-6">
+                    <label class="form-label">SKU</label>
+                    <input name="sku" value="{{ row[1] }}" type="number" class="form-control" min="1000000" max="9999999" disabled>
+                </div>
+                <div class="col-6">
+                    <label class="form-label">Nombre</label>
+                    <input name="nombre" value="{{ row[2] }}" type="text" class="form-control" disabled>
+                </div>
+                <div class="col-6">
+                    <label class="form-label">Precio</label>
+                    <input name="precio" value="{{ row[3] }}" type="number" class="form-control" disabled>
+                </div>
+                <div class="col-md-6">
+                    <label for="inputEmail4" class="form-label">Descripción</label>
+                    <input name="descripcion" value="{{ row[4] }}" type="text" class="form-control" id="inputEmail4" disabled>
+                </div>
+                <div class="col-6">
+                    <label class="form-label">Imagen</label>
+                    <input name="imagen" value="{{ row[5] }}" type="text" class="form-control" disabled>
+                </div>
+                <div class="col-6">
+                    <label class="form-label">Categorías</label>
+                    <select name="categorias" class="form-select" disabled>
+                        <option disabled value="">Escoger...</option>
+                        <option {% if row[6] == 'Accion' %}selected{% endif %}>Acción</option>
+                        <option {% if row[6] == 'Carreras' %}selected{% endif %}>Carreras</option>
+                        <!-- Agrega más opciones según sea necesario -->
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Desarrolladora</label>
+                    <input name="desarrolladora" value="{{ row[7] }}" type="text" class="form-control" disabled>
+                </div>
+
+                    <div class="box-footer">
+                        <a href="/producto/"><button type="button" class="btn btn-default">Cancelar</button></a>
+                        <input name="delete" type="submit" class="btn btn-info pull-right" value="Eliminar">
+                    </div>
+                {% endfor %}
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="player-one-logo">
+    <!-- Puedes ajustar el tamaño y la posición según tus necesidades -->
+    <img src="/static/img/logo.png" alt="Player ONE Logo" class="img-fluid">
+</div>
+
+<style>
+.player-one-logo {
+    padding: 20px; /* Espaciado alrededor del logo */
+    margin-top: 20px; /* Ajusta el espacio entre el formulario y el logo */
+    opacity: 0.3;
+    text-align: center;
+}
+
+.player-one-logo img {
+    max-width: 500%; /* La imagen es responsive y no excede el tamaño del contenedor */
+    height: auto; /* La altura se ajusta automáticamente según el ancho */
+}
+</style>
+
+{% endblock %}

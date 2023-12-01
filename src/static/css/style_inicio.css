@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url(../img/fondo_inicio_sesion.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+form{
+    
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    width: 434px;
+    height: 588px;
+    flex-shrink: 0;
+    border: 1px solid #000;
+    background: rgba(228, 228, 228, 0.92);
+}
+
+h2{
+    color: #000;
+    font-family: Istok Web;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+}
+
+label{
+    color: #000;
+font-family: Istok Web;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+p{
+    color: #000;
+font-family: Istok Web;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 30px;
+}
+
+.oracion{
+    text-align: center;
+}
+
+.imagen-central{
+    text-align: center;
+}
+
+.imagen-logo{
+    
+    width: 127px;
+    height: 148px;
+    flex-shrink: 0; 
+}
+
+input{
+    padding: 12px 11px;
+    border: 1px solid #000;
+    margin-bottom: 15px;
+    background: rgba(152, 151, 151, 0.35);
+    outline: none;
+    font-size: 17px;
+}
+
+.contenedor {
+    text-align: center;
+  }
+
+.remember{
+    display: flex;
+    margin-bottom: 25px;
+}
+
+a{
+    color: #000;
+}
+
+.contenedor .btn-1{
+    padding: 10px 15px 10px 15px;
+    width: 153px;
+height: 38px;
+flex-shrink: 0;
+border: 1px solid #000;
+background: rgba(0, 0, 0, 0.81);
+color: #FFF;
+font-family: Istok Web;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+cursor: pointer;
+}
+
+@media(max-width:500px){
+
+    body{
+        padding: 30px;
+    }
+
+    form{
+        width: 100%;
+    }
+}
+

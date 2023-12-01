@@ -1,0 +1,69 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<main>
+    <div class="container-fluid px-4">
+        <h1 class="mt-4">Tienda - Categorías</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a href="/index">Dashboard</a></li>
+            <li class="breadcrumb-item active">Categorías</li>
+        </ol>
+        
+        <div class="card mb-4">
+            <div class="card-header">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M0 0H9V9H0V0ZM15.5 0C18 0 20 2 20 4.5C20 7 18 9 15.5 9C13 9 11 7 11 4.5C11 2 13 0 15.5 0ZM4.5 12L9 20H0L4.5 12ZM17 15H20V17H17V20H15V17H12V15H15V12H17V15Z" fill="black"/>
+                  </svg>
+                Categorías disponibles <a href="/categoria/add3/"> <button type="button" class="btn btn-primary btn-flat">  <span class="glyphicon glyphicon-plus"></span> Nueva categoría  </button> </a>
+            </div>
+            <div class="card-body">
+              <table id="datatablesSimple">
+                  <thead align="center">
+                    <tr>
+                      <th>Nombre</th>
+                      <th>Descripción</th>
+                      <th>Imagen</th>
+                      <th>Estado</th>
+                      <th>Acción</th>
+                    </tr>
+                  </thead>
+        
+                  <tbody>
+                    {% if data|length == 0 %}
+                    <tr>
+                      <td>No Data</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                      {% for row in data %}
+                      <td>{{ row[1] }}</td>
+                      <td>{{ row[2] }}</td>
+                      <td><img src="/static/img/{{ row[3] }}" alt="" width="200px"></img></td>
+                      <td>{{ row[4] }}</td>
+                      <td align="center">
+                        <a href="/categoria/update3/{{ row[0]}}"><button type="button" class="btn btn-warning" title="Editar"><svg class="icono-tabla" xmlns="http://www.w3.org/2000/svg" width="17" height="18" viewBox="0 0 17 18" fill="none">
+                            <path d="M16.7238 4.04194C17.0921 3.65199 17.0921 3.00208 16.7238 2.63213L14.5141 0.292459C14.1647 -0.0974865 13.5509 -0.0974865 13.1826 0.292459L11.4451 2.12221L14.9863 5.87168M0 14.2505V18H3.54118L13.9853 6.93154L10.4441 3.18206L0 14.2505Z" fill="black"/>
+                          </svg></button></a>
+  
+                        <a href="/categoria/delete3/{{ row[0]}}">
+                          <button type="button" class="btn btn-danger" title="Borrar"><svg class="icono-tabla" xmlns="http://www.w3.org/2000/svg" width="14" height="18" viewBox="0 0 14 18" fill="none">
+                            <path d="M14 1H10.5L9.5 0H4.5L3.5 1H0V3H14M1 16C1 16.5304 1.21071 17.0391 1.58579 17.4142C1.96086 17.7893 2.46957 18 3 18H11C11.5304 18 12.0391 17.7893 12.4142 17.4142C12.7893 17.0391 13 16.5304 13 16V4H1V16Z" fill="black"/>
+                          </svg></button>
+                        </a>
+                      </td>
+                    </tr>
+                    {% endfor %}
+                    {% endif%}
+                  </tbody>
+                </table>
+          </div>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

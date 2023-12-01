@@ -1,0 +1,133 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<main>
+    <div class="container-fluid px-4">
+        <h1 class="mt-4">Dashboard</h1>
+        <div class="row">
+            <div class="col-xl-3 col-md-6">
+                <div class="card bg-primary text-white mb-4">
+                    <div class="card-body"><img src="../static/img/PlayStation_logo.png" alt="PlayStation" width="120px"></div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link" href="https://store.playstation.com/es-pe/pages/latest?gclid=CjwKCAiApaarBhB7EiwAYiMwqrlvnuvTbL__V4buBmUTr1i1y0jHWBL2ZIyuWbTpWsBa0Xinkc__shoCe30QAvD_BwE&gclsrc=aw.ds">Ver detalles</a>
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6">
+                <div class="card bg-warning text-white mb-4">
+                    <div class="card-body"><img src="../static/img/Steam_logo.png" alt="Steam" width="80px"></div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link" href="https://store.steampowered.com/?l=spanish">Ver detalles</a>
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6">
+                <div class="card bg-success text-white mb-4">
+                    <div class="card-body"><img src="../static/img/Xbox_logo.png" alt="Xbox" width="70px"></div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link" href="https://www.xbox.com/es-ES">Ver detalles</a>
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6">
+                <div class="card bg-danger text-white mb-4">
+                    <div class="card-body"><img src="../static/img/Nintendo_logo.png" alt="Nintendo" width="90px"></div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link" href="https://www.nintendo.com/es-pe/">Ver detalles</a>
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-6">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 20 19" fill="none">
+                            <path d="M15.45 12.73L20 4.86V16.55V18.55H0V0.55H2V13.09L7.5 3.55L14 7.33L18.24 0L19.97 1L14.74 10.05L8.23 6.3L2.31 16.55H4.57L8.96 8.99L15.45 12.73Z" fill="black"/>
+                          </svg>
+                        Ventas del día
+                    </div>
+                    <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div>
+                </div>
+            </div>
+            <div class="col-xl-6">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 20 18" fill="none">
+                            <path d="M20 18H0V0H2V16H4V7H8V16H10V3H14V16H16V11H20V18Z" fill="black"/>
+                            </svg>
+                        Ventas del mes
+                    </div>
+                    <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
+                </div>
+            </div>
+        </div>
+        <div class="card mb-4">
+            <div class="card-header">
+                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="23" viewBox="0 0 44 38" fill="none">
+                    <path d="M39.6 9.5L22 21.375L4.4 9.5V4.75L22 16.625L39.6 4.75M39.6 0H4.4C1.958 0 0 2.11375 0 4.75V33.25C0 34.5098 0.46357 35.718 1.28873 36.6088C2.11389 37.4996 3.23305 38 4.4 38H39.6C40.767 38 41.8861 37.4996 42.7113 36.6088C43.5364 35.718 44 34.5098 44 33.25V4.75C44 2.11375 42.02 0 39.6 0Z" fill="black"/>
+                </svg>
+                Mensajes
+            </div>
+            <div class="card-body">
+                <table id="datatablesSimple">
+                    <thead align="center">
+                      <tr>
+                        <th>Nombre</th>
+                        <th>Email</th>
+                        <th>Mensaje</th>
+                        <th>Acción</th>
+                      </tr>
+                    </thead>
+          
+                    <tbody>
+                      {% if data|length == 0 %}
+                      <tr>
+                        <td>No Data</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      {% else %}
+                      <tr>
+                        {% for row in data %}
+                        <td>{{ row[1] }}</td>
+                        <td>{{ row[2] }}</td>
+                        <td>{{ row[3] }}</td>
+                        <td align="center">
+                            <div class="btn-group" role="group" aria-label="Acciones">
+                                <form method="post" action="/enviar_mensaje/{{ row[0] }}">
+                                    <button type="submit" class="btn btn-primary mr-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+                                            <path d="M0 18L21 9L0 0V7L15 9L0 11V18Z" fill="black"/>
+                                        </svg>
+                                    </button>
+                                </form>                         
+                                <form method="post" action="/borrar_mensaje/{{ row[0] }}">
+                                    <button type="submit" class="btn btn-danger">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+                                            <path d="M14 1.0025H10.5L9.5 0.00250244H4.5L3.5 1.0025H0V3.0025H14M1 16.0025C1 16.5329 1.21071 17.0416 1.58579 17.4167C1.96086 17.7918 2.46957 18.0025 3 18.0025H11C11.5304 18.0025 12.0391 17.7918 12.4142 17.4167C12.7893 17.0416 13 16.5329 13 16.0025V4.0025H1V16.0025Z" fill="black"/>
+                                        </svg>
+                                    </button>
+                                </form> 
+                            </div>
+                        </td>
+                        
+                                                
+                        
+                      </tr>
+                      {% endfor %}
+                      {% endif%}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

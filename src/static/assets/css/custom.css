@@ -1,0 +1,36 @@
+/* PLACE YOU CUSTOM STYLES IN THIS FILE */
+.card-title {
+    color: rgb(0, 0, 0);
+}
+.card-text {
+    color: rgba(0, 0, 0, 0.466);
+}
+.centered-container {
+    text-align: center;
+}
+table {
+    border-collapse:initial;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #333;
+    padding: 10px;
+}
+
+th {
+    background-color: #333;
+    color: rgb(231, 87, 87);
+}
+
+tr:nth-child(even) {
+    background-color: #e45151;
+}
+#contador-box {
+   
+    padding: 39px;
+    box-shadow: 10px 10px 10px rgba(223, 202, 14, 0.822);
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.822);
+    text-align:right; 
+    background: url('/static/assets/images/tiempo_limitado/fondo2.jpg');
+}

@@ -1,0 +1,60 @@
+{% extends 'layout_tienda.html' %}
+
+{% block body%}
+<div class="nk-main">
+        
+    <!-- START: Breadcrumbs -->
+<div class="nk-gap-1"></div>
+<div class="container">
+<ul class="nk-breadcrumbs">
+
+
+<li><a href="/">Inicio</a></li>
+
+
+<li><span class="fa fa-angle-right"></span></li>
+
+<li><a href="/store">Tienda</a></li>
+
+
+<li><span class="fa fa-angle-right"></span></li>
+
+<li><a href="/store-cart">Carrito</a></li>
+
+
+<li><span class="fa fa-angle-right"></span></li>
+
+<li><span>Checkout</span></li>
+
+</ul>
+</div>
+<div class="nk-gap-1"></div>
+<!-- END: Breadcrumbs -->
+
+
+
+
+<div class="container">
+
+<div class="nk-store nk-store-checkout">
+<h3 class="nk-decorated-h-2"><span><span class="text-main-1">COMPRA</span> EXITOSA</span></h3>
+
+
+<hr><hr><hr>
+<!-- START: Billing Details -->
+<hr>
+<hr>
+<li><span>Compra exitosa, los artículos digitales serán enviados a su correo electrónico en los próximos minutos</span></li>
+<hr>
+
+<hr>
+<div style="text-align: center;">
+<img src="/static/assets/images/checkout/check.png" alt="check">
+</div>
+<div class="centered-container">
+    <div class="nk-gap-2"></div>
+    <a class="nk-btn nk-btn-rounded nk-btn-color-main-1" href="/">Volver a la tienda</a>
+    <div class="nk-gap-2"></div>
+</div>
+{% endblock %}
+

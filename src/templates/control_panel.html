@@ -1,0 +1,375 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Dashboard</title>
+        <link rel="icon" href="../static/img/logo.png" type="image/png">
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+        <link href="../static/css/styles.css" rel="stylesheet" />
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    </head>
+    <body class="sb-nav-fixed">
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+            
+            <a class="navbar-brand ps-3" href="/">
+                <img src="../static/img/logo_letra.png" alt="Player ONE" style="width: 200px">
+            </a>
+            
+            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+            
+            <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="/perfil">Perfil</a></li>
+                        <li><a class="dropdown-item" href="/control_panel">Dashboard</a></li>
+                        <li><hr class="dropdown-divider" /></li>
+                        <li><a class="dropdown-item" href="/inicio_sesion">Cerrar Sesión</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="Perfil">
+                            <a href="/perfil">
+                            <img class="imagen-Anthony" src="../static/img/Anthony_perfil.jpg" alt="img-avatar" href="/perfil"></a>
+                            <p class="nombre-perfil" href="/perfil">Dylan</p>
+
+                        </div>
+                        <div class="nav">
+                            <div class="sb-sidenav-menu-heading"></div>
+                            <a class="nav-link" href="/control_panel">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="sb-nav-link-icon" width="25" height="25" viewBox="0 0 37 37" fill="none">
+                                    <path d="M20.5556 0V12.3333H37V0M20.5556 37H37V16.4444H20.5556M0 37H16.4444V24.6667H0M0 20.5556H16.4444V0H0V20.5556Z" fill="white"/>
+                                </svg>
+                                Dashboard
+                            </a>
+                            
+                            <a class="nav-link" href="/perfil">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="sb-nav-link-icon" width="30" height="25" viewBox="0 0 48 37" fill="none">
+                                    <path d="M36.2425 12.6134C36.925 11.9146 36.925 10.75 36.2425 10.0871L32.1475 5.89461C31.5 5.19586 30.3625 5.19586 29.68 5.89461L26.46 9.17336L33.0225 15.8921M5.25 30.9063V37.625H11.8125L31.1675 17.7913L24.605 11.0725L5.25 30.9063Z" fill="white"/>
+                                </svg>
+                                Editar cuenta
+                            
+                            </a>
+                            
+                            <a class="nav-link" href="/correo">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="sb-nav-link-icon" width="25" height="30" viewBox="0 0 45 50" fill="none">
+                                    <path d="M40.8335 15.6667L24.5002 25.4583L8.16683 15.6667V11.75L24.5002 21.5417L40.8335 11.75M40.8335 7.83334H8.16683C5.90058 7.83334 4.0835 9.57626 4.0835 11.75V35.25C4.0835 36.2888 4.5137 37.285 5.27948 38.0195C6.04525 38.754 7.08386 39.1667 8.16683 39.1667H40.8335C41.9165 39.1667 42.9551 38.754 43.7208 38.0195C44.4866 37.285 44.9168 36.2888 44.9168 35.25V11.75C44.9168 9.57626 43.0793 7.83334 40.8335 7.83334Z" fill="white"/>
+                                </svg>
+                                Envianos un correo
+                            </a>
+
+                            
+                            
+                            <a class="nav-link" href="/pedidos">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="sb-nav-link-icon" width="28" height="35" viewBox="0 0 37 40" fill="none">
+                                    <path d="M29.6 32C27.5465 32 25.9 33.78 25.9 36C25.9 37.0609 26.2898 38.0783 26.9837 38.8284C27.6776 39.5786 28.6187 40 29.6 40C30.5813 40 31.5224 39.5786 32.2163 38.8284C32.9102 38.0783 33.3 37.0609 33.3 36C33.3 33.78 31.635 32 29.6 32ZM0 0V4H3.7L10.36 19.18L7.844 24.08C7.5665 24.64 7.4 25.3 7.4 26C7.4 27.0609 7.78982 28.0783 8.4837 28.8284C9.17759 29.5786 10.1187 30 11.1 30H33.3V26H11.877C11.7543 26 11.6367 25.9473 11.55 25.8536C11.4632 25.7598 11.4145 25.6326 11.4145 25.5C11.4145 25.4 11.433 25.32 11.47 25.26L13.135 22H26.9175C28.305 22 29.526 21.16 30.155 19.94L36.778 7C36.9075 6.68 37 6.34 37 6C37 5.46957 36.8051 4.96086 36.4581 4.58579C36.1112 4.21071 35.6407 4 35.15 4H7.7885L6.0495 0M11.1 32C9.0465 32 7.4 33.78 7.4 36C7.4 37.0609 7.78982 38.0783 8.4837 38.8284C9.17759 39.5786 10.1187 40 11.1 40C12.0813 40 13.0224 39.5786 13.7163 38.8284C14.4102 38.0783 14.8 37.0609 14.8 36C14.8 33.78 13.135 32 11.1 32Z" fill="white"/>
+                                    </svg>
+                                Pedidos
+                            </a >
+                            <a class="nav-link" href="/inicio_sesion">
+                                  <svg xmlns="http://www.w3.org/2000/svg" class="sb-nav-link-icon" width="25" height="30" viewBox="0 0 34 39" fill="none">
+                                    <path d="M24.5556 29.25V23.4H11.3333V15.6H24.5556V9.75L34 19.5L24.5556 29.25ZM20.7778 0C21.7797 0 22.7406 0.410892 23.4491 1.14228C24.1575 1.87368 24.5556 2.86566 24.5556 3.9V7.8H20.7778V3.9H3.77778V35.1H20.7778V31.2H24.5556V35.1C24.5556 36.1343 24.1575 37.1263 23.4491 37.8577C22.7406 38.5891 21.7797 39 20.7778 39H3.77778C2.77585 39 1.81496 38.5891 1.10649 37.8577C0.398015 37.1263 0 36.1343 0 35.1V3.9C0 2.86566 0.398015 1.87368 1.10649 1.14228C1.81496 0.410892 2.77585 0 3.77778 0H20.7778Z" fill="white"/>
+                                    </svg>
+                                Cerrar sesión
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4">Dashboard</h1>
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="23" viewBox="0 0 44 38" fill="none">
+                                    <path d="M39.6 9.5L22 21.375L4.4 9.5V4.75L22 16.625L39.6 4.75M39.6 0H4.4C1.958 0 0 2.11375 0 4.75V33.25C0 34.5098 0.46357 35.718 1.28873 36.6088C2.11389 37.4996 3.23305 38 4.4 38H39.6C40.767 38 41.8861 37.4996 42.7113 36.6088C43.5364 35.718 44 34.5098 44 33.25V4.75C44 2.11375 42.02 0 39.6 0Z" fill="black"/>
+                                </svg>
+                                Mensajes
+                            </div>
+                            <div class="card-body">
+                                <table id="datatablesSimple">
+                                    <thead>
+                                        <tr>
+                                            <th>PlayerOne</th>
+                                            <th>Mensaje</th>
+                                            <th>Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>PlayerOne</th>
+                                            <th>Mensaje</th>
+                                            <th>Acciones</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        <tr>
+                                            <td>Player One</td>
+                                            <td>No te pierdas de este gran lanzamiento! Spiderman 2 en 20% solo para los primeros 100 compradores.</td>
+                                            <td><svg class="icono-tabla" xmlns="http://www.w3.org/2000/svg" width="14" height="18" viewBox="0 0 14 18" fill="none">
+                                                <path d="M14 1H10.5L9.5 0H4.5L3.5 1H0V3H14M1 16C1 16.5304 1.21071 17.0391 1.58579 17.4142C1.96086 17.7893 2.46957 18 3 18H11C11.5304 18 12.0391 17.7893 12.4142 17.4142C12.7893 17.0391 13 16.5304 13 16V4H1V16Z" fill="black"/>
+                                              </svg>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Player One</td>
+                                            <td>Aprovecha la semana de nuestro aniversario! Encontrarás tu títulos retro favoritos desde 20 soles! No dejes pasar esta oportunidad de disfrutar lo mejor de tu infancia.</td>
+                                            <td><svg class="icono-tabla" xmlns="http://www.w3.org/2000/svg" width="14" height="18" viewBox="0 0 14 18" fill="none">
+                                                <path d="M14 1H10.5L9.5 0H4.5L3.5 1H0V3H14M1 16C1 16.5304 1.21071 17.0391 1.58579 17.4142C1.96086 17.7893 2.46957 18 3 18H11C11.5304 18 12.0391 17.7893 12.4142 17.4142C12.7893 17.0391 13 16.5304 13 16V4H1V16Z" fill="black"/>
+                                              </svg>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Soporte Player One</td>
+                                            <td>Ocurrio algún error con tu método de pago, comunicate con tu banco o intentalo más tarde. </td>
+                                            <td><svg class="icono-tabla" xmlns="http://www.w3.org/2000/svg" width="14" height="18" viewBox="0 0 14 18" fill="none">
+                                                <path d="M14 1H10.5L9.5 0H4.5L3.5 1H0V3H14M1 16C1 16.5304 1.21071 17.0391 1.58579 17.4142C1.96086 17.7893 2.46957 18 3 18H11C11.5304 18 12.0391 17.7893 12.4142 17.4142C12.7893 17.0391 13 16.5304 13 16V4H1V16Z" fill="black"/>
+                                              </svg>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Soporte Player One</td>
+                                            <td>Gracias por unirte a Player One !!! Aprovecha al máximo de los mejores precios en tus videojuegos favoritos!</td>
+                                            <td><svg class="icono-tabla" xmlns="http://www.w3.org/2000/svg" width="14" height="18" viewBox="0 0 14 18" fill="none">
+                                                <path d="M14 1H10.5L9.5 0H4.5L3.5 1H0V3H14M1 16C1 16.5304 1.21071 17.0391 1.58579 17.4142C1.96086 17.7893 2.46957 18 3 18H11C11.5304 18 12.0391 17.7893 12.4142 17.4142C12.7893 17.0391 13 16.5304 13 16V4H1V16Z" fill="black"/>
+                                              </svg>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid px-4">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">Copyright &copy; Player ONE 2023</div>
+                            <div>
+                                <a href="#">Política de privacidad</a>
+                                &middot;
+                                <a href="#">Términos &amp; Condiciones</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="../static/js/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="../static/assets/demo/chart-area-demo.js"></script>
+        <script src="../static/assets/demo/chart-bar-demo.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
+        <script src="../static/js/datatables-simple-demo.js"></script>
+    </body>
+</html> -->
+{% extends 'layout_tienda.html' %}
+
+{% block body %}
+
+<div class="nk-main">
+        
+    <!-- START: Breadcrumbs -->
+<div class="nk-gap-1"></div>
+<div class="container">
+<ul class="nk-breadcrumbs">
+
+
+<li><a href="/">Inicio</a></li>
+
+
+<li><span class="fa fa-angle-right"></span></li>
+
+<li><a href="/control_panel">Cliente</a></li>
+
+
+<li><span class="fa fa-angle-right"></span></li>
+
+<li><span>Bienvenido!</span></li>
+
+</ul>
+</div>
+<div class="nk-gap-1"></div>
+
+
+<div class="container">
+
+    <div class="nk-store nk-store-checkout">
+    <h3 class="nk-decorated-h-2"><span><span class="text-main-1">{{ session['nombre_cliente'] }}</span> {{ session['apellido_cliente'] }}</span></h3>
+
+    <div style="text-align: center;">
+        <img src="/static/img/{{ session['foto_cliente'] }}" class="rounded mx-auto d-block" alt="..." style="width: 200px; height: 200px; border: 5px solid #dd163b; padding: 5px; margin-top: 50px;">
+        <div class="nk-gap-2"></div>
+    </div>
+    <div class="nk-gap-2"></div>
+
+    <!-- START: Order Products -->
+    <h3 class="nk-decorated-h-2"><span><span><span class="text-main-1">Datos</span> Personales  </span></span> </h3>
+    <div class="nk-gap"></div>
+
+
+    <form action="#" class="nk-form">
+        <div class="row vertical-gap">
+            <div class="col-md-4">
+                <label for="fname">Nombre(s) <span class="text-main-1"></span>:</label>
+                <input type="text" readonly class="form-control-plaintext" value="{{ session['nombre_cliente'] }}" style="color: white;">
+            </div>            
+            <div class="col-md-4">
+                <label for="lname">Apellidos <span class="text-main-1"></span>:</label>
+                <input type="text" readonly class="form-control-plaintext" value="{{ session['apellido_cliente'] }}" style="color: white;">
+            </div>
+            <div class="col-md-4">
+                <label for="document">Documento <span class="text-main-1"></span>:</label>
+                <input type="text" readonly class="form-control-plaintext" value="{{ session['dni_cliente'] }}" style="color: white;">
+            </div>
+    
+            <div class="col-md-4">
+                <label for="phone">Celular <span class="text-main-1"></span>:</label>
+                <input type="text" readonly class="form-control-plaintext" value="{{ session['telefono_cliente'] }}" style="color: white;">
+            </div>
+            <div class="col-md-4">
+                <label for="email">Correo <span class="text-main-1"></span>:</label>
+                <input type="text" readonly class="form-control-plaintext" value="{{ session['correo_cliente'] }}" style="color: white;">
+            </div>
+        </div>
+    </form>
+
+    <div class="nk-gap-2"></div>
+
+    <div class="nk-store nk-store-checkout">
+        <h3 class="nk-decorated-h-2"><span><span class="text-main-1">Mis</span> Direcciones</span></h3>
+
+        <div class="table-responsive">
+            <table class="nk-table nk-table-sm">
+                <thead class="thead-default">
+                    <tr>
+                        <th class="nk-product-cart-title">Dirección</th>
+                        <th class="nk-product-cart-total">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td class="nk-product-cart-title">
+                                Av. Benavides 123, Miraflores, Lima, Perú, 15074
+                            </td>
+                            <td align="center">
+                                <a href="#"><button type="button" class="btn btn-warning" title="Editar"><svg class="icono-tabla" xmlns="http://www.w3.org/2000/svg" width="17" height="18" viewBox="0 0 17 18" fill="none">
+                                    <path d="M16.7238 4.04194C17.0921 3.65199 17.0921 3.00208 16.7238 2.63213L14.5141 0.292459C14.1647 -0.0974865 13.5509 -0.0974865 13.1826 0.292459L11.4451 2.12221L14.9863 5.87168M0 14.2505V18H3.54118L13.9853 6.93154L10.4441 3.18206L0 14.2505Z" fill="black"/>
+                                  </svg></button></a>
+          
+                                <a href="#">
+                                  <button type="button" class="btn btn-danger" title="Borrar"><svg class="icono-tabla" xmlns="http://www.w3.org/2000/svg" width="14" height="18" viewBox="0 0 14 18" fill="none">
+                                    <path d="M14 1H10.5L9.5 0H4.5L3.5 1H0V3H14M1 16C1 16.5304 1.21071 17.0391 1.58579 17.4142C1.96086 17.7893 2.46957 18 3 18H11C11.5304 18 12.0391 17.7893 12.4142 17.4142C12.7893 17.0391 13 16.5304 13 16V4H1V16Z" fill="black"/>
+                                  </svg></button>
+                                </a>
+                            </td>
+                        </tr>
+                    
+                        <tr>
+                            <td class="nk-product-cart-title">
+                                Jr. Las Flores 456, San Isidro, Lima, Perú, 15036
+                            </td>
+                            <td align="center">
+                                <a href="#"><button type="button" class="btn btn-warning" title="Editar"><svg class="icono-tabla" xmlns="http://www.w3.org/2000/svg" width="17" height="18" viewBox="0 0 17 18" fill="none">
+                                    <path d="M16.7238 4.04194C17.0921 3.65199 17.0921 3.00208 16.7238 2.63213L14.5141 0.292459C14.1647 -0.0974865 13.5509 -0.0974865 13.1826 0.292459L11.4451 2.12221L14.9863 5.87168M0 14.2505V18H3.54118L13.9853 6.93154L10.4441 3.18206L0 14.2505Z" fill="black"/>
+                                  </svg></button></a>
+          
+                                <a href="#">
+                                  <button type="button" class="btn btn-danger" title="Borrar"><svg class="icono-tabla" xmlns="http://www.w3.org/2000/svg" width="14" height="18" viewBox="0 0 14 18" fill="none">
+                                    <path d="M14 1H10.5L9.5 0H4.5L3.5 1H0V3H14M1 16C1 16.5304 1.21071 17.0391 1.58579 17.4142C1.96086 17.7893 2.46957 18 3 18H11C11.5304 18 12.0391 17.7893 12.4142 17.4142C12.7893 17.0391 13 16.5304 13 16V4H1V16Z" fill="black"/>
+                                  </svg></button>
+                                </a>
+                            </td>
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+
+        <div class="nk-gap-2"></div>
+    </div>
+
+    <div class="nk-store nk-store-checkout">
+        <h3 class="nk-decorated-h-2"><span><span class="text-main-1">Mis</span> Medios de Pago</span></h3>
+
+        <div class="table-responsive">
+            <table class="nk-table nk-table-sm">
+                <thead class="thead-default">
+                    <tr>
+                        <th class="nk-product-cart-title">Tipo</th>
+                        <th class="nk-product-cart-total">Número</th>
+                        <th class="nk-product-cart-total">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td class="nk-product-cart-title">
+                                CMR
+                            </td>
+                            <td class="nk-product-cart-title">
+                                xxxx xxxx xxxx 1740
+                            </td>
+                            <td align="center">
+                            
+                                <a href="#">
+                                  <button type="button" class="btn btn-danger" title="Borrar"><svg class="icono-tabla" xmlns="http://www.w3.org/2000/svg" width="14" height="18" viewBox="0 0 14 18" fill="none">
+                                    <path d="M14 1H10.5L9.5 0H4.5L3.5 1H0V3H14M1 16C1 16.5304 1.21071 17.0391 1.58579 17.4142C1.96086 17.7893 2.46957 18 3 18H11C11.5304 18 12.0391 17.7893 12.4142 17.4142C12.7893 17.0391 13 16.5304 13 16V4H1V16Z" fill="black"/>
+                                  </svg></button>
+                                </a>
+                            </td>
+                        </tr>
+                    
+                        <tr>
+                            <td class="nk-product-cart-title">
+                                American Express
+                            </td>
+                            <td class="nk-product-cart-title">
+                                xxxx xxxx xxxx 0714
+                            </td>
+                            <td align="center">
+          
+                                <a href="#">
+                                  <button type="button" class="btn btn-danger" title="Borrar"><svg class="icono-tabla" xmlns="http://www.w3.org/2000/svg" width="14" height="18" viewBox="0 0 14 18" fill="none">
+                                    <path d="M14 1H10.5L9.5 0H4.5L3.5 1H0V3H14M1 16C1 16.5304 1.21071 17.0391 1.58579 17.4142C1.96086 17.7893 2.46957 18 3 18H11C11.5304 18 12.0391 17.7893 12.4142 17.4142C12.7893 17.0391 13 16.5304 13 16V4H1V16Z" fill="black"/>
+                                  </svg></button>
+                                </a>
+                            </td>
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="nk-gap-2"></div>
+
+    <div class="nk-store nk-store-checkout">
+        <h3 class="nk-decorated-h-2"><span><span class="text-main-1">Mis</span> Compras</span></h3>
+
+            <h5>Redigir a <a href="pedidos">Mis Compras</a></h5>
+
+    
+    </div>
+
+    <div class="nk-gap-2"></div>
+<a class="nk-btn nk-btn-rounded nk-btn-color-main-1" href="{{ url_for('cerrar_sesion') }}">Cerrar Sesión</a>
+
+    </div>
+    <div class="nk-gap-2"></div>
+</div>
+
+{% endblock %}
+

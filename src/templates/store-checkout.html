@@ -1,0 +1,214 @@
+{% extends 'layout_tienda.html' %}
+
+{% block body%}
+<div class="nk-main">
+        
+    <!-- START: Breadcrumbs -->
+<div class="nk-gap-1"></div>
+<div class="container">
+<ul class="nk-breadcrumbs">
+
+
+<li><a href="/">Inicio</a></li>
+
+
+<li><span class="fa fa-angle-right"></span></li>
+
+<li><a href="/store">Tienda</a></li>
+
+
+<li><span class="fa fa-angle-right"></span></li>
+
+<li><a href="/store-cart">Carrito</a></li>
+
+
+<li><span class="fa fa-angle-right"></span></li>
+
+<li><span>Checkout</span></li>
+
+</ul>
+</div>
+<div class="nk-gap-1"></div>
+<!-- END: Breadcrumbs -->
+
+
+
+
+<div class="container">
+
+<div class="nk-store nk-store-checkout">
+<h3 class="nk-decorated-h-2"><span><span class="text-main-1">Detalles</span> de facturación</span></h3>
+
+
+<!-- START: Billing Details -->
+<div class="nk-gap"></div>
+<form action="#" class="nk-form">
+    <div class="row vertical-gap">
+        <div class="col-lg-6">
+            <div class="row vertical-gap">
+                <div class="col-sm-6">
+                    <label for="fname">Nombre <span class="text-main-1">*</span>:</label>
+                    <input type="text" class="form-control required" name="fname" id="fname" value="{{ session['nombre_cliente'] }}">
+                </div>
+                <div class="col-sm-6">
+                    <label for="lname">Apellido <span class="text-main-1">*</span>:</label>
+                    <input type="text" class="form-control required" name="lname" id="lname" value="{{ session['apellido_cliente'] }}">
+                </div>
+            </div>
+
+            <div class="nk-gap-1"></div>
+            <div class="row vertical-gap">
+                <div class="col-sm-6">
+                    <label for="email">Correo <span class="text-main-1">*</span>:</label>
+                    <input type="email" class="form-control required" name="email" id="email" value="{{ session['correo_cliente'] }}">
+                </div>
+                <div class="col-sm-6">
+                    <label for="phone">Celular <span class="text-main-1">*</span>:</label>
+                    <input type="tel" class="form-control required" name="phone" id="phone" value="{{ session['telefono_cliente'] }}">
+                </div>
+            </div>
+
+            
+
+            <div class="nk-gap-1"></div>
+            <label for="country-sel">Distrito <span class="text-main-1">*</span>:</label>
+            <select name="country" class="form-control required" id="country-sel">
+                <option value="">Seleccione un distrito...</option>
+                <option value="Ancón">Ancón</option>
+                <option value="Ate">Ate</option>
+    <option value="Barranco">Barranco</option>
+    <option value="Breña">Breña</option>
+    <option value="Carabayllo">Carabayllo</option>
+    <option value="Chaclacayo">Chaclacayo</option>
+    <option value="Chorrillos">Chorrillos</option>
+    <option value="Cieneguilla">Cieneguilla</option>
+    <option value="Comas">Comas</option>
+    <option value="El Agustino">El Agustino</option>
+    <option value="Independencia">Independencia</option>
+    <option value="Jesús María">Jesús María</option>
+    <option value="La Molina">La Molina</option>
+    <option value="La Victoria">La Victoria</option>
+    <option value="Lince">Lince</option>
+    <option value="Los Olivos">Los Olivos</option>
+    <option value="Lurigancho">Lurigancho</option>
+    <option value="Lurín">Lurín</option>
+    <option value="Magdalena del Mar">Magdalena del Mar</option>
+    <option value="Miraflores">Miraflores</option>
+    <option value="Pachacamac">Pachacamac</option>
+    <option value="Pucusana">Pucusana</option>
+    <option value="Pueblo Libre">Pueblo Libre</option>
+    <option value="Puente Piedra">Puente Piedra</option>
+    <option value="Punta Hermosa">Punta Hermosa</option>
+    <option value="Punta Negra">Punta Negra</option>
+    <option value="Rímac">Rímac</option>
+    <option value="San Bartolo">San Bartolo</option>
+    <option value="San Borja">San Borja</option>
+    <option value="San Isidro">San Isidro</option>
+    <option value="San Juan de Lurigancho">San Juan de Lurigancho</option>
+    <option value="San Juan de Miraflores">San Juan de Miraflores</option>
+    <option value="San Luis">San Luis</option>
+    <option value="San Martín de Porres">San Martín de Porres</option>
+    <option value="San Miguel">San Miguel</option>
+    <option value="Santa Anita">Santa Anita</option>
+    <option value="Santa María del Mar">Santa María del Mar</option>
+    <option value="Santa Rosa">Santa Rosa</option>
+    <option value="Santiago de Surco">Santiago de Surco</option>
+    <option value="Surquillo">Surquillo</option>
+    <option value="Villa El Salvador">Villa El Salvador</option>
+    <option value="Villa María del Triunfo">Villa María del Triunfo</option>
+            </select>
+        </div>
+        <div class="col-lg-6">
+            <label for="address">Dirección <span class="text-main-1">*</span>:</label>
+            <input type="text" class="form-control required" name="address" id="address">
+
+            <div class="nk-gap-1"></div>
+            <label for="country-sel">Ciudad <span class="text-main-1">*</span>:</label>
+            <select name="Ciudad" class="form-control required" id="city">
+                <option value="">Seleccione una ciudad...</option>
+                <option value="Ancón">Lima</option>
+            </select>
+
+            <div class="nk-gap-1"></div>
+            <div class="row vertical-gap">
+                <div class="col-sm-6">
+                    <label for="state">Referencia <span class="text-main-1"></span>:</label>
+                    <input type="text" class="form-control required" name="state" id="state">
+                </div>
+                <div class="col-sm-6">
+                    <label for="zip">Código Postal <span class="text-main-1"></span>:</label>
+                    <input type="tel" class="form-control required" name="zip" id="zip">
+                </div>
+            </div>
+
+            <div class="nk-gap-1"></div>
+
+        </div>
+    </div>
+</form>
+<!-- END: Billing Details -->
+
+<div class="nk-gap-2"></div>
+
+
+<!-- START: Order Products -->
+<div class="nk-gap-3"></div>
+<h3 class="nk-decorated-h-2"><span><span class="text-main-1">Tu</span> Orden</span></h3>
+<div class="nk-gap"></div>
+<div class="table-responsive">
+    <table class="nk-table nk-table-sm">
+        <thead class="thead-default">
+            <tr>
+                <th class="nk-product-cart-title">Producto</th>
+                <th class="nk-product-cart-total">Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                <tr>
+                    <td class="nk-product-cart-title">
+                        Resident Evil Village &times; 1
+                    </td>
+                    <td class="nk-product-cart-total">
+                        S/ 22.00
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td class="nk-product-cart-title">
+                        It takes two &times; 1
+                    </td>
+                    <td class="nk-product-cart-total">
+                        S/ 14.00
+                    </td>
+                </tr>
+            
+            <tr class="nk-store-cart-totals-subtotal">
+                <td>
+                    Subtotal
+                </td>
+                <td>
+                    S/ 36.00
+                </td>
+            </tr>
+
+            <tr class="nk-store-cart-totals-total">
+                <td>
+                    Total
+                </td>
+                <td>
+                    S/ 36.00
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- END: Order Products -->
+
+<div class="nk-gap-2"></div>
+<a class="nk-btn nk-btn-rounded nk-btn-color-main-1" href="/store-checkout-2">Siguiente</a>
+</div>
+</div>
+<div class="nk-gap-2"></div>
+{% endblock %}
+
